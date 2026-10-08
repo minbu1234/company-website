@@ -376,6 +376,15 @@ p {
   font-weight: bold;
 }
 
+/* 税込の金額（料金表のかっこ内） */
+.price-table .tax-in {
+  margin-left: 4px;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
 .price-table .th-sub {
   display: block;
   color: var(--color-text-light);
@@ -719,11 +728,17 @@ p {
   }
 
   .price-table th {
-    width: 55%;
+    width: 50%;
   }
 
   .price-table td {
     font-size: 1rem;
+  }
+
+  /* スマホでは税込の金額を次の行に表示 */
+  .price-table .tax-in {
+    display: block;
+    margin-left: 0;
   }
 
   .flow li {
