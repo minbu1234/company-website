@@ -59,7 +59,8 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 1.4;
   color: var(--color-main);
 }
@@ -92,6 +93,12 @@ p {
   justify-content: space-between;
   gap: 16px;
   min-height: 72px;
+}
+
+.logo-heading {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .logo {
@@ -130,28 +137,6 @@ p {
   font-weight: bold;
   box-shadow: inset 0 -2px 0 var(--color-main);
   border-radius: 0;
-}
-
-/* ---------- トップのメイン部分 ---------- */
-.hero {
-  background: var(--color-bg-gray);
-  padding: 64px 0;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.hero-title {
-  margin: 0 0 16px;
-  font-size: 2rem;
-}
-
-.hero-lead {
-  color: var(--color-text-light);
 }
 
 /* ---------- 下層ページの見出し帯 ---------- */
@@ -209,6 +194,11 @@ p {
   padding-left: 12px;
   font-size: 1.25rem;
   border-left: 4px solid var(--color-main);
+}
+
+.section-title + .sub-title,
+.notice + .sub-title {
+  margin-top: 0;
 }
 
 .section-more {
@@ -273,13 +263,39 @@ p {
   border-radius: 6px;
 }
 
-.card h3 {
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card h3,
+.card h4 {
   margin: 0 0 12px;
   font-size: 1.15rem;
 }
 
 .card p:last-child {
   margin-bottom: 0;
+}
+
+/* カードの下の小さなラベル（「月額料金に含む」「オプション」など） */
+.tag {
+  display: inline-block;
+  margin: 4px 4px 0 0;
+  padding: 2px 10px;
+  border: 1px solid var(--color-main);
+  border-radius: 999px;
+  color: var(--color-main);
+  font-size: 0.8rem;
+}
+
+.tag-sub {
+  border-color: var(--color-border);
+  background: var(--color-bg-gray);
+  color: var(--color-text-light);
 }
 
 .card-number {
@@ -296,20 +312,101 @@ p {
 /* ---------- 2列の配置（画像＋文章） ---------- */
 .media {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.media-wide {
   grid-template-columns: 1fr 1fr;
+  gap: 40px;
   align-items: center;
 }
 
-.signature {
-  margin-top: 24px;
-  text-align: right;
+/* ---------- お悩みのチェックリスト ---------- */
+.check-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding: 16px 20px 16px 56px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-main);
+  color: #fff;
+  font-size: 0.85rem;
   font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* ---------- よくあるご質問（クリックで答えが開きます） ---------- */
+.faq details {
+  margin-bottom: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.faq summary {
+  position: relative;
+  padding: 16px 48px 16px 52px;
+  color: var(--color-main);
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::before {
+  content: "Q";
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  font-size: 1.1rem;
+}
+
+.faq summary::after {
+  content: "＋";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+}
+
+.faq details[open] summary::after {
+  content: "－";
+}
+
+.faq details p {
+  position: relative;
+  margin: 0;
+  padding: 0 20px 16px 52px;
+}
+
+.faq details p::before {
+  content: "A";
+  position: absolute;
+  top: -2px;
+  left: 18px;
+  color: var(--color-temp);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.faq + .btn-group {
+  margin-top: 40px;
 }
 
 /* ---------- 表 ---------- */
@@ -341,6 +438,23 @@ p {
 .price-table td {
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.price-table .th-sub {
+  display: block;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+/* 対応範囲の表 */
+.scope-table td {
+  font-size: 1rem;
+}
+
+.scope-table td.is-out {
+  color: var(--color-text-light);
+  font-weight: normal;
 }
 
 .price-table caption {
@@ -403,7 +517,8 @@ p {
   font-size: 0.95rem;
 }
 
-.card-grid + .note-list {
+.card-grid + .note-list,
+.price-table + .note-list {
   margin-top: 24px;
 }
 
@@ -475,6 +590,11 @@ p {
 .contact-box h3 {
   margin: 0 0 12px;
   font-size: 1.1rem;
+}
+
+.contact-grid-single {
+  grid-template-columns: 1fr;
+  max-width: 480px;
 }
 
 .contact-value {
@@ -574,7 +694,8 @@ p {
 
 /* タブレット（幅960px以下） */
 @media (max-width: 960px) {
-  .card-grid {
+  .card-grid,
+  .card-grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -606,29 +727,10 @@ p {
     font-size: 0.9rem;
   }
 
-  .hero {
-    padding: 40px 0;
-  }
-
-  .hero-inner,
   .media,
-  .media-wide,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .hero-title {
-    font-size: 1.5rem;
-  }
-
-  .media img {
-    max-width: 240px;
-    margin: 0 auto;
-  }
-
-  .media-wide img {
-    max-width: 100%;
   }
 
   .page-header {
@@ -661,9 +763,18 @@ p {
     padding: 16px 12px;
   }
 
-  .card-grid-compact .card h3 {
+  .card-grid-compact .card h4 {
     margin: 0;
     font-size: 1rem;
+  }
+
+  .check-list li {
+    padding: 12px 16px 12px 48px;
+  }
+
+  .check-list li::before {
+    top: 12px;
+    left: 14px;
   }
 
   .btn {
