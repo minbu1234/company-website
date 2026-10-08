@@ -4,7 +4,7 @@
    株式会社M&Hコンサルティング 共通スタイル
    ---------------------------------------------------------
    ・サイト全体の色は、すぐ下の「色の設定」で変更できます。
-   ・このファイルは5ページすべてで共通です。
+   ・このファイルは4ページすべてで共通です。
    ========================================================= */
 
 /* ---------- 色・文字・幅の設定（ここを変えるとサイト全体が変わります） ---------- */
@@ -447,8 +447,14 @@ p {
   margin-top: 24px;
 }
 
-.note-list + .btn-group {
-  margin-top: 40px;
+/* ---------- 「会計事務所のお客様限定」のお知らせ ---------- */
+.limited-note {
+  margin: 0 0 40px;
+  padding: 14px 20px;
+  background: var(--color-main-light);
+  border-left: 4px solid var(--color-main);
+  color: var(--color-main);
+  font-weight: bold;
 }
 
 /* ---------- ご依頼の流れ ---------- */
@@ -492,77 +498,6 @@ p {
 
 .flow p {
   margin: 0;
-}
-
-/* ---------- お問い合わせ ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.contact-box {
-  padding: 32px 24px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  text-align: center;
-}
-
-.contact-box h2,
-.contact-box h3 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-}
-
-.contact-grid-single {
-  grid-template-columns: 1fr;
-  max-width: 480px;
-}
-
-.contact-value {
-  margin: 0 0 8px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  word-break: break-all;
-}
-
-.contact-value a {
-  text-decoration: none;
-}
-
-.contact-sub {
-  margin: 0;
-  color: var(--color-text-light);
-  font-size: 0.9rem;
-}
-
-/* トップの一番下のお問い合わせ帯 */
-.cta {
-  background: var(--color-main);
-  color: #fff;
-}
-
-.cta .section-title {
-  color: #fff;
-}
-
-.cta .section-title::after {
-  background: #fff;
-}
-
-.cta .contact-box {
-  border: none;
-}
-
-.cta .contact-box h3 {
-  color: var(--color-main);
-}
-
-.cta .contact-box {
-  color: var(--color-text);
 }
 
 /* ---------- フッター（ページ下部） ---------- */
@@ -652,8 +587,7 @@ p {
     font-size: 0.9rem;
   }
 
-  .media,
-  .contact-grid {
+  .media {
     grid-template-columns: 1fr;
     gap: 24px;
   }

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- ===== ヘッダー（全ページ共通：変更するときは5ファイルすべて直してください） ===== -->
+  <!-- ===== ヘッダー（全ページ共通：変更するときは4ファイルすべて直してください） ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">株式会社M&amp;Hコンサルティング</a>
@@ -19,7 +19,6 @@
           <li><a href="company.html">会社概要</a></li>
           <li><a href="services.html">サービス紹介</a></li>
           <li><a href="pricing.html" aria-current="page">料金</a></li>
-          <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
@@ -37,7 +36,6 @@
 
     <!--
       金額を直すときの注意
-      ・基本料金や1名あたりの料金を変えたら、「人数別の月額の例」も計算し直してください。
       ・トップページ（index.html）の「料金の目安」にも同じ金額が書いてあります。
       ・税込の金額（かっこ内）は、税別の金額 × 1.1 です。税別の金額を変えたら、税込の金額も直してください。
     -->
@@ -45,10 +43,13 @@
     <!-- ===================== 給与計算代行の料金 ===================== -->
     <section class="section">
       <div class="container container-narrow">
+        <!-- ▼ご利用いただける方についてのお知らせ -->
+        <p class="limited-note">本サービスは、会計事務所のお客様限定のサービスです。</p>
+
         <h2 class="section-title">給与計算代行</h2>
 
         <h3 class="sub-title">料金のしくみ</h3>
-        <p>月額料金は、「基本料金（5名まで）」に、6名目からの人数分の料金を足した金額です。賞与計算と各オプションは、必要な場合のみ別料金でお受けします。</p>
+        <p>月額料金は、従業員の人数に応じて10人ごとの区分で決まります。賞与計算と各オプションは、必要な場合のみ別料金でお受けします。</p>
 
         <!-- ===== 初期費用 ===== -->
         <h3 class="sub-title">初期費用</h3>
@@ -60,43 +61,33 @@
           </tr>
         </table>
 
-        <!-- ===== 月額料金 ===== -->
+        <!-- ===== 月額料金（10人ごとの区分） ===== -->
         <h3 class="sub-title">月額料金（給与計算）</h3>
         <table class="price-table">
           <caption>税別・毎月（かっこ内は税込）</caption>
           <tr>
-            <th>基本料金（5名まで）</th>
-            <td>12,000円<span class="tax-in">（税込13,200円）</span></td>
+            <th>10人まで</th>
+            <td>10,000円<span class="tax-in">（税込11,000円）</span></td>
           </tr>
           <tr>
-            <th>6名目から（1名あたり）</th>
-            <td>1,200円<span class="tax-in">（税込1,320円）</span></td>
-          </tr>
-        </table>
-
-        <!-- ===== 人数別の例（基本料金や1名あたりの料金を変えたら計算し直してください） ===== -->
-        <h3 class="sub-title">人数別の月額の例</h3>
-        <table class="price-table">
-          <caption>税別・毎月（かっこ内は税込）</caption>
-          <tr>
-            <th>5名まで</th>
-            <td>12,000円<span class="tax-in">（税込13,200円）</span></td>
+            <th>11〜20人</th>
+            <td>20,000円<span class="tax-in">（税込22,000円）</span></td>
           </tr>
           <tr>
-            <th>10名</th>
-            <td>18,000円<span class="tax-in">（税込19,800円）</span></td>
-          </tr>
-          <tr>
-            <th>20名</th>
+            <th>21〜30人</th>
             <td>30,000円<span class="tax-in">（税込33,000円）</span></td>
           </tr>
           <tr>
-            <th>30名</th>
-            <td>42,000円<span class="tax-in">（税込46,200円）</span></td>
+            <th>31〜40人</th>
+            <td>40,000円<span class="tax-in">（税込44,000円）</span></td>
           </tr>
           <tr>
-            <th>50名</th>
-            <td>66,000円<span class="tax-in">（税込72,600円）</span></td>
+            <th>41〜50人</th>
+            <td>50,000円<span class="tax-in">（税込55,000円）</span></td>
+          </tr>
+          <tr>
+            <th>51人以上</th>
+            <td>10人増えるごとに +10,000円<span class="tax-in">（税込 +11,000円）</span></td>
           </tr>
         </table>
 
@@ -139,7 +130,6 @@
         <h3 class="sub-title">ご注意</h3>
         <ul class="note-list">
           <li>表示の金額は税別です。かっこ内は、消費税（10%）を含む税込の金額です。</li>
-          <li>51名以上の場合は、お見積りいたします。</li>
           <li>社会保険の手続き（社会保険労務士の業務）と年末調整（税理士の業務）は、当社では承っておりません。</li>
           <li>【要入力：お支払い方法、契約期間などの条件】</li>
         </ul>
@@ -178,16 +168,12 @@
           <li>訪問にかかる交通費などの実費は、別途ご請求いたします。</li>
           <li>株価の算定、税務申告・税務相談、契約書の作成など、税理士・弁護士の業務は含みません。</li>
         </ul>
-
-        <div class="btn-group btn-group-center">
-          <a href="contact.html" class="btn btn-primary">お見積り・お問い合わせ</a>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== フッター（全ページ共通：変更するときは5ファイルすべて直してください） ===== -->
+  <!-- ===== フッター（全ページ共通：変更するときは4ファイルすべて直してください） ===== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -201,7 +187,6 @@
             <li><a href="company.html">会社概要</a></li>
             <li><a href="services.html">サービス紹介</a></li>
             <li><a href="pricing.html">料金</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
