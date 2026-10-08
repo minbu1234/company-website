@@ -447,16 +447,6 @@ p {
   margin-top: 24px;
 }
 
-/* ---------- 「会計事務所のお客様限定」のお知らせ ---------- */
-.limited-note {
-  margin: 0 0 40px;
-  padding: 14px 20px;
-  background: var(--color-main-light);
-  border-left: 4px solid var(--color-main);
-  color: var(--color-main);
-  font-weight: bold;
-}
-
 /* ---------- ご依頼の流れ ---------- */
 .flow {
   max-width: 760px;
