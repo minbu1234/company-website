@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <!-- 仮の画像です。写真ができたら差し替えてください（README.md 参照） -->
+  <rect width="1200" height="600" fill="#dfe5ec"/>
+  <rect x="12" y="12" width="1176" height="576" fill="none" stroke="#a9b6c6" stroke-width="4" stroke-dasharray="20 12"/>
+  <g font-family="Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo, sans-serif" fill="#5b6b80" text-anchor="middle">
+    <text x="600" y="280" font-size="44" font-weight="bold">仮の画像（地図）</text>
+    <text x="600" y="340" font-size="28">おすすめの大きさ：横1200 × 縦600</text>
+    <text x="600" y="385" font-size="24">images/map.svg</text>
+  </g>
+</svg>
