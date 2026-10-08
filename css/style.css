@@ -305,14 +305,6 @@ p {
   border-radius: 3px;
 }
 
-/* ---------- 2列の配置（画像＋文章） ---------- */
-.media {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
 /* ---------- お悩みのチェックリスト ---------- */
 .check-list {
   margin: 0;
@@ -575,11 +567,6 @@ p {
   .global-nav a {
     padding: 6px 10px;
     font-size: 0.9rem;
-  }
-
-  .media {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .page-header {
