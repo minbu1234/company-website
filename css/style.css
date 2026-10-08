@@ -1,0 +1,671 @@
+@charset "UTF-8";
+
+/* =========================================================
+   株式会社M&Hコンサルティング 共通スタイル
+   ---------------------------------------------------------
+   ・サイト全体の色は、すぐ下の「色の設定」で変更できます。
+   ・このファイルは4ページすべてで共通です。
+   ========================================================= */
+
+/* ---------- 色・文字・幅の設定（ここを変えるとサイト全体が変わります） ---------- */
+:root {
+  --color-main: #1e3a5f;        /* メインの色（濃い紺）：見出し・ボタン・フッター */
+  --color-main-dark: #142a46;   /* メインの色の濃いめ：ボタンにマウスを乗せたとき */
+  --color-main-light: #e8eef5;  /* メインの色の薄いめ：表の見出し・番号の背景 */
+  --color-text: #333333;        /* 本文の文字色 */
+  --color-text-light: #666666;  /* 補足の文字色 */
+  --color-bg: #ffffff;          /* 基本の背景色 */
+  --color-bg-gray: #f4f6f9;     /* 区切り用の薄いグレーの背景色 */
+  --color-border: #dde3ea;      /* 線の色 */
+
+  --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
+    "Yu Gothic", "YuGothic", Meiryo, sans-serif;
+
+  --max-width: 1080px;          /* ページの最大の横幅 */
+}
+
+/* ---------- 基本 ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-main);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.4;
+  color: var(--color-main);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 料金ページなど、横幅を少し狭くしたいところ */
+.container-narrow {
+  max-width: 860px;
+}
+
+/* ---------- ヘッダー（ページ上部） ---------- */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.logo-heading {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-main);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+.global-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.global-nav a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 4px;
+}
+
+.global-nav a:hover {
+  background: var(--color-bg-gray);
+}
+
+/* 今見ているページのメニューを目立たせる */
+.global-nav a[aria-current="page"] {
+  color: var(--color-main);
+  font-weight: bold;
+  box-shadow: inset 0 -2px 0 var(--color-main);
+  border-radius: 0;
+}
+
+/* ---------- 下層ページの見出し帯 ---------- */
+.page-header {
+  background: var(--color-main);
+  color: #fff;
+  padding: 40px 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.page-header-en {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+/* ---------- セクション（区切り） ---------- */
+.section {
+  padding: 64px 0;
+}
+
+.section-gray {
+  background: var(--color-bg-gray);
+}
+
+.section-title {
+  margin: 0 0 32px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--color-main);
+}
+
+.section-lead {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.sub-title {
+  margin: 40px 0 16px;
+  padding-left: 12px;
+  font-size: 1.25rem;
+  border-left: 4px solid var(--color-main);
+}
+
+.section-title + .sub-title {
+  margin-top: 0;
+}
+
+.section-more {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* ---------- ボタン ---------- */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-group-center {
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 180px;
+  padding: 12px 28px;
+  border: 2px solid var(--color-main);
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-main);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-main-dark);
+  border-color: var(--color-main-dark);
+}
+
+.btn-outline {
+  background: var(--color-bg);
+  color: var(--color-main);
+}
+
+.btn-outline:hover {
+  background: var(--color-main-light);
+}
+
+/* ---------- カード（サービス・選ばれる理由など） ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  padding: 28px 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card h3,
+.card h4 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* カードの下の小さなラベル（「月額料金に含む」「オプション」など） */
+.tag {
+  display: inline-block;
+  margin: 4px 4px 0 0;
+  padding: 2px 10px;
+  border: 1px solid var(--color-main);
+  border-radius: 999px;
+  color: var(--color-main);
+  font-size: 0.8rem;
+}
+
+.tag-sub {
+  border-color: var(--color-border);
+  background: var(--color-bg-gray);
+  color: var(--color-text-light);
+}
+
+.card-number {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 2px 10px;
+  background: var(--color-main-light);
+  color: var(--color-main);
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+/* ---------- お悩みのチェックリスト ---------- */
+.check-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding: 16px 20px 16px 56px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-main);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* ---------- 表 ---------- */
+.info-table,
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg);
+}
+
+.info-table th,
+.info-table td,
+.price-table th,
+.price-table td {
+  padding: 16px 20px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table th,
+.price-table th {
+  width: 30%;
+  background: var(--color-main-light);
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+.price-table td {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* 税込の金額（料金表のかっこ内） */
+.price-table .tax-in {
+  margin-left: 4px;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.price-table .th-sub {
+  display: block;
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+/* 対応範囲の表 */
+.scope-table td {
+  font-size: 1rem;
+}
+
+.scope-table td.is-out {
+  color: var(--color-text-light);
+  font-weight: normal;
+}
+
+.price-table caption {
+  padding-bottom: 8px;
+  text-align: left;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+/* ---------- 料金の目安（トップ） ---------- */
+.price-summary {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--color-bg);
+  border: 2px solid var(--color-main);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.price-summary-main {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.price-summary-main strong {
+  font-size: 2rem;
+  color: var(--color-main);
+}
+
+.note-list {
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.card-grid + .note-list,
+.price-table + .note-list {
+  margin-top: 24px;
+}
+
+/* ---------- ご依頼の流れ ---------- */
+.flow {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: flow;
+}
+
+.flow li {
+  position: relative;
+  margin-bottom: 16px;
+  padding: 20px 24px 20px 80px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  counter-increment: flow;
+}
+
+.flow li::before {
+  content: counter(flow);
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-main);
+  color: #fff;
+  font-weight: bold;
+  line-height: 36px;
+  text-align: center;
+}
+
+.flow h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.flow p {
+  margin: 0;
+}
+
+/* ---------- フッター（ページ下部） ---------- */
+.site-footer {
+  background: var(--color-main-dark);
+  color: #fff;
+  padding: 40px 0 16px;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-name {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin: 32px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* =========================================================
+   スマホ・タブレット向け（画面の幅が狭いときの表示）
+   ========================================================= */
+
+/* タブレット（幅960px以下） */
+@media (max-width: 960px) {
+  .card-grid,
+  .card-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホ（幅768px以下） */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  /* ヘッダー：社名の下にメニューを折り返して並べる */
+  .header-inner {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .global-nav ul {
+    justify-content: center;
+  }
+
+  .global-nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .page-header {
+    padding: 28px 0;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* トップのサービス（業務名だけのカード）はスマホでも2列 */
+  .card-grid-compact {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card-grid-compact .card {
+    padding: 16px 12px;
+  }
+
+  .card-grid-compact .card h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .check-list li {
+    padding: 12px 16px 12px 48px;
+  }
+
+  .check-list li::before {
+    top: 12px;
+    left: 14px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* 表：項目と内容を縦に並べる */
+  .info-table th,
+  .info-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .info-table th {
+    padding: 8px 16px;
+    border-bottom: none;
+  }
+
+  .info-table td {
+    padding: 12px 16px;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 12px;
+  }
+
+  .price-table th {
+    width: 50%;
+  }
+
+  .price-table td {
+    font-size: 1rem;
+  }
+
+  /* スマホでは税込の金額を次の行に表示 */
+  .price-table .tax-in {
+    display: block;
+    margin-left: 0;
+  }
+
+  .flow li {
+    padding: 16px 16px 16px 64px;
+  }
+
+  .flow li::before {
+    top: 16px;
+    left: 16px;
+  }
+
+  .price-summary {
+    padding: 24px 16px;
+  }
+
+  .price-summary-main strong {
+    font-size: 1.6rem;
+  }
+}
