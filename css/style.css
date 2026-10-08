@@ -17,9 +17,6 @@
   --color-bg: #ffffff;          /* 基本の背景色 */
   --color-bg-gray: #f4f6f9;     /* 区切り用の薄いグレーの背景色 */
   --color-border: #dde3ea;      /* 線の色 */
-  --color-temp: #c0392b;        /* 「※仮」の文字色 */
-  --color-notice-bg: #fff4e5;   /* 注意枠の背景色 */
-  --color-notice-border: #e8a33d; /* 注意枠の線の色 */
 
   --font-base: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP",
     "Yu Gothic", "YuGothic", Meiryo, sans-serif;
@@ -196,8 +193,7 @@ p {
   border-left: 4px solid var(--color-main);
 }
 
-.section-title + .sub-title,
-.notice + .sub-title {
+.section-title + .sub-title {
   margin-top: 0;
 }
 
@@ -349,66 +345,6 @@ p {
   text-align: center;
 }
 
-/* ---------- よくあるご質問（クリックで答えが開きます） ---------- */
-.faq details {
-  margin-bottom: 12px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-}
-
-.faq summary {
-  position: relative;
-  padding: 16px 48px 16px 52px;
-  color: var(--color-main);
-  font-weight: bold;
-  cursor: pointer;
-  list-style: none;
-}
-
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq summary::before {
-  content: "Q";
-  position: absolute;
-  top: 14px;
-  left: 18px;
-  font-size: 1.1rem;
-}
-
-.faq summary::after {
-  content: "＋";
-  position: absolute;
-  top: 16px;
-  right: 18px;
-}
-
-.faq details[open] summary::after {
-  content: "－";
-}
-
-.faq details p {
-  position: relative;
-  margin: 0;
-  padding: 0 20px 16px 52px;
-}
-
-.faq details p::before {
-  content: "A";
-  position: absolute;
-  top: -2px;
-  left: 18px;
-  color: var(--color-temp);
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.faq + .btn-group {
-  margin-top: 40px;
-}
-
 /* ---------- 表 ---------- */
 .info-table,
 .price-table {
@@ -488,26 +424,6 @@ p {
 .price-summary-main strong {
   font-size: 2rem;
   color: var(--color-main);
-}
-
-/* ---------- 「※仮」の表示と注意枠 ---------- */
-.temp {
-  margin-left: 6px;
-  color: var(--color-temp);
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-.notice {
-  margin: 0 0 40px;
-  padding: 20px 24px;
-  background: var(--color-notice-bg);
-  border: 2px solid var(--color-notice-border);
-  border-radius: 6px;
-}
-
-.notice p:last-child {
-  margin-bottom: 0;
 }
 
 .note-list {
